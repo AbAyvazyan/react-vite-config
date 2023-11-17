@@ -145,8 +145,7 @@ export const moviesSlice = createSlice({
         sessionStorage.setItem('movies', JSON.stringify(payload));
         return payload;
       })
-      .addCase(getMovies.pending, () => {
-      })
+      .addCase(getMovies.pending, () => {})
       .addCase(getMovies.rejected, () => {
         console.error('Failed to fetch movies:');
       });

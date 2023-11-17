@@ -27,7 +27,6 @@ const Carousel = () => {
     setSliderMembers(movies.TendingNow);
   }, [movies]);
 
-
   const movieCardClickCHandler = (id: string) => {
     dispatch(setActive(id));
   };
