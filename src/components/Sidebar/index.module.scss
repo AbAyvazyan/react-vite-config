@@ -1,0 +1,137 @@
+.sidebar {
+  height: 100vh;
+  width: 100px;
+  position: absolute;
+  overflow: hidden;
+
+  &:hover {
+    width: 500px;
+    .miniBar {
+      display: none;
+    }
+
+    .fullBar {
+      left: 0;
+    }
+
+
+  }
+
+  &:hover + .overlay {
+    background: rgba(0, 0, 0, 0.6); // Set the desired opacity value
+  }
+
+  & > div {
+    height: 100%;
+  }
+
+  .miniBar {
+    width: 100px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: opacity 1.5s;
+    padding: 20vh 0;
+    display: flex;
+    row-gap: 15px;
+    justify-content: center;
+
+    & .singleCategory {
+      width: 60px;
+      height: 60px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 50%;
+      margin-bottom: 10px;
+    }
+
+    & .activeCategory {
+      background: #232a3f;
+    }
+  }
+
+  .fullBar {
+    width: 300px;
+    position: absolute;
+    top: 0;
+    left: -500px;
+    transition: left 0.5s;
+    z-index: 5;
+    padding: 10vh 0 0 25px;
+    background: rgba(4,4,4,0.9);
+    box-shadow: rgb(4,4,4) 0px 22px 70px 4px;
+
+    & .profilePart {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      margin-bottom: 7vh;
+
+      & > img {
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+      }
+
+      & > span {
+        color: #ffffff;
+        font-size: 25px;
+        font-weight: 500;
+      }
+    }
+
+    .fullCategory {
+      height: 50px;
+      width: 240px;
+      display: flex;
+      align-items: center;
+      padding: 5px 10px;
+      margin-bottom: 15px;
+      box-sizing: border-box;
+      border-radius: 5px;
+      gap: 20px;
+      cursor: pointer;
+      color: #ffffff;
+      font-size: 20px;
+      font-weight: 500;
+
+      &:hover{
+        background: rgb(92, 106, 154);
+      }
+    }
+
+    .fullActiveCategory {
+      background: #3b486d;
+    }
+
+    .helpBar{
+      margin-top: 17vh;
+      padding-left: 5px;
+
+      &>div{
+        color: #858688;
+        letter-spacing: 3px;
+        text-transform: uppercase;
+        margin-bottom: 7px;
+        & > span:hover{
+          color: #ffffff;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 3;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0);
+  transition: background 0.5s; // Smooth transition for background opacity
+  pointer-events: none; // Allow clicks to go through the overlay
+}
