@@ -1,15 +1,13 @@
-import './App.scss';
 import Home from '@pages/Home';
-import { Provider } from 'react-redux';
-import store from '@app/store';
+import MainLayout from '@layouts/HomeLayout';
+
+import './App.scss';
 
 function App() {
   return (
-    <>
-      <Provider store={store}>
-        <Home />
-      </Provider>
-    </>
+    <MainLayout>
+      <Home/>
+    </MainLayout>
   );
 }
 

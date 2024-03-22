@@ -1,11 +1,17 @@
-type TCatgerories = {
-  title: string;
-  image: string;
-  active: boolean;
-};
+interface IMenuItem {
+    id: number,
+    title: string
+}
 
-type MovieImagesType = {
-  [key: string]: string;
-};
+interface IData {
+    title: string,
+    text: string,
+    tags: string,
+    autor: string,
+    img: string,
+    img_2x: string,
+    date: string,
+    views: string,
+}
 
-export type { TCatgerories, MovieImagesType };
+export type { IMenuItem,IData }

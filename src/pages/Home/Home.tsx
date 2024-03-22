@@ -1,13 +1,27 @@
-import Sidebar from '@components/Sidebar/Sidebar';
-import HomeLayout from '../../layoust/HomeLayout';
+import { useEffect, useState } from 'react'
+import Card from '@components/Card/Card'
+import styles from './Home.module.scss'
+import { IData } from '@utils/types'
+import getDataAction from '@utils/getDataAction'
 
 const Home = () => {
-  return (
-    <>
-      <Sidebar />
-      <HomeLayout />
-    </>
-  );
-};
+    const [data, setData] = useState<IData[]>([])
 
-export default Home;
+    useEffect(() => {
+        (async () => {
+            const response: IData[] = await getDataAction()
+            setData(response)
+        })()
+    }, [])
+
+
+    return (
+        <section className={styles.homePage}>
+            {data.map((card: IData, index: number) => {
+                return <Card key={index} {...card} isInModal={false}/>
+            })}
+        </section>
+    )
+}
+
+export default Home
