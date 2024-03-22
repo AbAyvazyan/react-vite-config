@@ -2,7 +2,10 @@
     width: 100%;
     max-height: 8.75rem;
     position: sticky;
-    // top: 12.5rem;
+    position: -webkit-sticky;
+    background-color: #ffffff;
+    top: 0;
+    bottom: 100vh;
     .topPart {
         width: 100%;
         display: flex;

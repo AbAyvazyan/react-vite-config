@@ -8,9 +8,7 @@ const MainLayout: FC<{ children: ReactNode }> = ({ children }) => {
   return (
     <>
       <Header />
-      <main className={styles.main}>
-        {children}
-      </main>
+      <main className={styles.main}>{children}</main>
     </>
   );
 };
